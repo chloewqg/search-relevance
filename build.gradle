@@ -227,12 +227,13 @@ dependencies {
     zipArchive group: 'org.opensearch.plugin', name:'opensearch-ml-plugin', version: "${opensearch_build}"
     zipArchive group: 'org.opensearch.plugin', name:'opensearch-knn', version: "${opensearch_build}"
     zipArchive group: 'org.opensearch.plugin', name:'neural-search', version: "${opensearch_build}"
-    zipArchive group: 'org.opensearch.plugin', name:'opensearch-ubi', version: "${opensearch_build}"
+    // zipArchive group: 'org.opensearch.plugin', name:'opensearch-ubi', version: "${opensearch_build}"
     opensearchPlugin "org.opensearch.plugin:opensearch-security:${opensearch_build}@zip"
 
     configurations.all {
         resolutionStrategy {
             force("com.google.guava:guava:33.4.8-jre") // CVE for 31.1
+            force("com.google.errorprone:error_prone_annotations:2.41.0") // Fix version conflict
         }
     }
 }
